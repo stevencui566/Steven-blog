@@ -1,0 +1,207 @@
+/* 自定义样式 */
+
+/* 导航栏滚动效果 */
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#navbar.scrolled a,
+#navbar.scrolled #menuBtn {
+  color: #1e293b;
+}
+
+#navbar.scrolled a:hover {
+  color: #2563eb;
+}
+
+#navbar.scrolled .text-white {
+  color: #1e293b !important;
+}
+
+/* 滚动显示动画 */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 证书卡片 */
+.certificate-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.certificate-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background: #f8fafc;
+  transition: transform 0.5s ease;
+}
+
+.certificate-card:hover img {
+  transform: scale(1.05);
+}
+
+.certificate-card .card-body {
+  padding: 1rem;
+}
+
+.certificate-card .card-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1e293b;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.certificate-card .card-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* 证书分类颜色 */
+.tag-three-good { background: #dbeafe; color: #1d4ed8; }
+.tag-sports { background: #dcfce7; color: #15803d; }
+.tag-stem { background: #e0e7ff; color: #4338ca; }
+.tag-academic { background: #fef3c7; color: #b45309; }
+.tag-art { background: #fce7f3; color: #be185d; }
+.tag-volunteer { background: #fef2f2; color: #b91c1c; }
+.tag-school { background: #f1f5f9; color: #475569; }
+.tag-labor { background: #f0fdfa; color: #0f766e; }
+
+/* 相册卡片 */
+.gallery-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.gallery-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-card .gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-card .gallery-title {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Lightbox */
+#lightbox {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox.active {
+  opacity: 1;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .certificate-card img {
+    height: 180px;
+  }
+  
+  h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* 分类按钮激活状态 */
+.honor-filter.active,
+.gallery-filter.active {
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+/* 加载动画 */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

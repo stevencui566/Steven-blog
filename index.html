@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steven · 个人主页</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            accent: {
+              50: '#fefce8',
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'gradient': 'gradient 8s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-15px)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800">
+
+  <!-- 导航栏 -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-xl font-bold text-white drop-shadow-lg">
+        <i class="fa-solid fa-star text-accent-400 mr-2"></i>Steven
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-white/90 text-sm font-medium">
+        <a href="#about" class="hover:text-accent-300 transition">关于我</a>
+        <a href="#honors" class="hover:text-accent-300 transition">荣誉证书</a>
+        <a href="#gallery" class="hover:text-accent-300 transition">精彩瞬间</a>
+        <a href="#skills" class="hover:text-accent-300 transition">特长爱好</a>
+        <a href="#contact" class="hover:text-accent-300 transition">联系我</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-white text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t">
+      <div class="px-6 py-4 flex flex-col gap-4 text-slate-700 font-medium">
+        <a href="#about" class="hover:text-primary-600 transition">关于我</a>
+        <a href="#honors" class="hover:text-primary-600 transition">荣誉证书</a>
+        <a href="#gallery" class="hover:text-primary-600 transition">精彩瞬间</a>
+        <a href="#skills" class="hover:text-primary-600 transition">特长爱好</a>
+        <a href="#contact" class="hover:text-primary-600 transition">联系我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero 区域 -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- 渐变背景 -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-500 to-accent-400 bg-[length:200%_200%] animate-gradient"></div>
+    <!-- 装饰圆圈 -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent-300/20 rounded-full blur-3xl animate-float" style="animation-delay: 1.5s;"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+      <div class="mb-8 animate-float">
+        <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl ring-4 ring-white/30">
+          <img src="Steven-resume/证件照.jpg" alt="Steven 证件照" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-4 drop-shadow-lg animate-fade-in-up">
+        你好，我是 <span class="text-accent-300">Steven</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
+        🌟 阳光少年 · 热爱编程 · 喜欢足球 · 热心公益
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <a href="#honors" class="px-8 py-3 bg-white text-primary-700 rounded-full font-bold hover:bg-accent-300 hover:text-slate-900 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <i class="fa-solid fa-trophy mr-2"></i> 查看我的荣誉
+        </a>
+        <a href="#gallery" class="px-8 py-3 bg-white/20 backdrop-blur border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-primary-700 transition shadow-lg">
+          <i class="fa-solid fa-camera mr-2"></i> 精彩瞬间
+        </a>
+      </div>
+      
+      <!-- 滚动提示 -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 animate-bounce">
+        <i class="fa-solid fa-chevron-down text-2xl"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">ABOUT ME</span>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">关于我</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-400 mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <p class="text-lg text-slate-600 leading-relaxed mb-6">
+            我是 Steven，一名来自北京西城区的小学生。在老师和同学们的眼中，我是一个品学兼优、阳光开朗的好少年。
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed mb-6">
+            🏆 <strong>学习上</strong>，我先后获得四、五、六年级"三好学生"，并荣获 <span class="text-primary-600">北京市三好学生</span> 称号。我热爱编程，多次在青少年编程设计大赛中获奖。
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed mb-6">
+            ⚽ <strong>运动场上</strong>，我是足球队的"最佳射手"，带领球队获得西城区小学生足球联赛男子甲组第六名。
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            🎸 <strong>生活中</strong>，我热爱吉他表演，积极参与公益活动，是中国少年先锋队西城区代表大会的代表，也是一名光荣的红领巾志愿者。
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <div class="bg-gradient-to-br from-primary-500 to-primary-700 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <div class="text-4xl mb-2">🏆</div>
+            <div class="text-3xl font-black">30+</div>
+            <div class="text-sm text-white/80">荣誉证书</div>
+          </div>
+          <div class="bg-gradient-to-br from-accent-400 to-accent-500 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <div class="text-4xl mb-2">⚽</div>
+            <div class="text-3xl font-black">2</div>
+            <div class="text-sm text-white/80">最佳射手</div>
+          </div>
+          <div class="bg-gradient-to-br from-green-500 to-emerald-600 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <div class="text-4xl mb-2">💻</div>
+            <div class="text-3xl font-black">5级</div>
+            <div class="text-sm text-white/80">GESP 编程</div>
+          </div>
+          <div class="bg-gradient-to-br from-rose-500 to-pink-600 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
+            <div class="text-4xl mb-2">🎖️</div>
+            <div class="text-3xl font-black">2星</div>
+            <div class="text-sm text-white/80">红领巾奖章</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 荣誉证书 -->
+  <section id="honors" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-accent-100 text-accent-600 rounded-full text-sm font-medium mb-4">HONORS & AWARDS</span>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">荣誉证书</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-accent-400 to-primary-500 mx-auto rounded-full"></div>
+        <p class="text-slate-500 mt-4">每一张证书，都是成长路上的脚印 👣</p>
+      </div>
+
+      <!-- 分类标签 -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+        <button class="honor-filter px-5 py-2 rounded-full bg-primary-600 text-white font-medium shadow-md hover:shadow-lg transition active" data-category="all">
+          <i class="fa-solid fa-layer-group mr-1"></i> 全部
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="three-good">
+          <i class="fa-solid fa-medal mr-1"></i> 三好学生
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="sports">
+          <i class="fa-solid fa-futbol mr-1"></i> 体育
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="stem">
+          <i class="fa-solid fa-microchip mr-1"></i> 科创
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="academic">
+          <i class="fa-solid fa-book mr-1"></i> 学科
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="art">
+          <i class="fa-solid fa-palette mr-1"></i> 文艺
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="volunteer">
+          <i class="fa-solid fa-hands-helping mr-1"></i> 志愿者
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="school">
+          <i class="fa-solid fa-school mr-1"></i> 学校荣誉
+        </button>
+        <button class="honor-filter px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition" data-category="labor">
+          <i class="fa-solid fa-hammer mr-1"></i> 劳动实践
+        </button>
+      </div>
+
+      <!-- 证书网格 -->
+      <div id="honorGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- 证书卡片通过 JS 动态生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 精彩瞬间 -->
+  <section id="gallery" class="py-24 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-white/10 text-accent-300 rounded-full text-sm font-medium mb-4">WONDERFUL MOMENTS</span>
+        <h2 class="text-4xl md:text-5xl font-black mb-4">精彩瞬间</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-accent-400 to-primary-400 mx-auto rounded-full"></div>
+        <p class="text-white/60 mt-4">记录成长路上的每一个美好时刻 📸</p>
+      </div>
+
+      <!-- 分类标签 -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+        <button class="gallery-filter px-5 py-2 rounded-full bg-primary-500 text-white font-medium shadow-md hover:shadow-lg transition active" data-category="all">
+          全部
+        </button>
+        <button class="gallery-filter px-5 py-2 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition" data-category="campus">
+          🏫 校园活动
+        </button>
+        <button class="gallery-filter px-5 py-2 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition" data-category="social">
+          🌱 社会实践
+        </button>
+        <button class="gallery-filter px-5 py-2 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition" data-category="interest">
+          ⚽ 兴趣爱好
+        </button>
+        <button class="gallery-filter px-5 py-2 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition" data-category="representative">
+          🎖️ 校园代表
+        </button>
+      </div>
+
+      <!-- 照片瀑布流 -->
+      <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- 照片卡片通过 JS 动态生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 特长爱好 -->
+  <section id="skills" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-4">SKILLS & PASSIONS</span>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">特长爱好</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-primary-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 编程科创 -->
+        <div class="reveal bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-100 hover:shadow-xl transition group">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
+            💻
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">编程 & 科创</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i>青少年编程设计大赛一等奖</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i>创意编程一等奖 (2021年)</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i>GESP Python 5级认证</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i>STEAM 京港地铁未来工程师</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-blue-500 mr-3"></i>2024年科技梦想家</li>
+          </ul>
+        </div>
+
+        <!-- 足球体育 -->
+        <div class="reveal bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 hover:shadow-xl transition group">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
+            ⚽
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">足球 & 运动</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>2024 足球最佳射手</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>2025 足球最佳射手</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>2025 年优秀运动员</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>西城区足球联赛男子甲组第六</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i>积极锻炼好少年</li>
+          </ul>
+        </div>
+
+        <!-- 吉他文艺 -->
+        <div class="reveal bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-8 border border-rose-100 hover:shadow-xl transition group">
+          <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
+            🎸
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">吉他 & 文艺</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li class="flex items-center"><i class="fa-solid fa-check text-rose-500 mr-3"></i>北京广播电视台吉他表演</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-rose-500 mr-3"></i>音乐会吉他表演</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-rose-500 mr-3"></i>北京电视台"我是少年"演出</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-rose-500 mr-3"></i>十二届青少年故事节二等奖</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-rose-500 mr-3"></i>绘画优秀奖</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 公益志愿 -->
+      <div class="reveal mt-8 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl p-8 border border-amber-100 hover:shadow-xl transition">
+        <div class="flex flex-col md:flex-row md:items-center gap-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+            ❤️
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">公益 & 志愿者</h3>
+            <p class="text-slate-600">
+              作为红领巾志愿者，我积极参与各种公益活动：一亿个瓶子回收、中轴线文化宣传、守护蔚蓝之光、快乐植树季…… 连续三年获得红领巾优秀志愿者称号。
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-amber-200 text-amber-800 rounded-full text-sm">环保</span>
+            <span class="px-3 py-1 bg-amber-200 text-amber-800 rounded-full text-sm">文化宣传</span>
+            <span class="px-3 py-1 bg-amber-200 text-amber-800 rounded-full text-sm">植树</span>
+            <span class="px-3 py-1 bg-amber-200 text-amber-800 rounded-full text-sm">海洋保护</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我 -->
+  <section id="contact" class="py-24 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800 text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-accent-300/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <div class="reveal">
+        <span class="inline-block px-4 py-1 bg-white/10 text-accent-300 rounded-full text-sm font-medium mb-4">GET IN TOUCH</span>
+        <h2 class="text-4xl md:text-5xl font-black mb-6">认识我，你会喜欢我 🌟</h2>
+        <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+          我是一个充满好奇心、积极向上的阳光少年。无论是学习上的伙伴，还是运动场上的队友，希望能和你成为朋友！
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition">
+            <i class="fa-solid fa-location-dot text-3xl text-accent-300 mb-3"></i>
+            <div class="font-bold">所在地</div>
+            <div class="text-white/70 text-sm">北京 · 西城区</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition">
+            <i class="fa-solid fa-graduation-cap text-3xl text-accent-300 mb-3"></i>
+            <div class="font-bold">身份</div>
+            <div class="text-white/70 text-sm">小学生 · 少先队员</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition">
+            <i class="fa-solid fa-award text-3xl text-accent-300 mb-3"></i>
+            <div class="font-bold">座右铭</div>
+            <div class="text-white/70 text-sm">努力成为最好的自己</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-slate-950 text-white/60 py-8 text-center">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="mb-2">Made with <i class="fa-solid fa-heart text-rose-400"></i> by Steven</p>
+      <p class="text-sm">© 2026 Steven · 阳光少年，未来可期 🌈</p>
+    </div>
+  </footer>
+
+  <!-- 图片放大预览 -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4">
+    <button id="lightboxClose" class="absolute top-6 right-6 text-white text-3xl hover:text-accent-300 transition">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button id="lightboxPrev" class="absolute left-6 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-accent-300 transition">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="lightboxNext" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-accent-300 transition">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
+    <div id="lightboxCaption" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-center"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
